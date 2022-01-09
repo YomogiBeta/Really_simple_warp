@@ -1,0 +1,13 @@
+﻿name: Really simple warp
+main: yomogibeta\reallySimpleWarp\main
+version: 600
+api: [4.0.0]
+load: POSTWORLD
+author: Yomogiβ
+description: 本当にシンプルなワープplugin
+commands:
+permissions:
+ yomogi.simplewarp.onlyop.cmd:
+  default: op
+ yomogi.simplewarp.public.cmd:
+  default: true
