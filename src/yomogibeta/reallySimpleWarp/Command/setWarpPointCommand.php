@@ -29,9 +29,9 @@ class setWarpPointCommand extends Command
         }
         if ($this->main->registerPoint(
             $args[0],
-            $sender->getLocation()->getX(),
-            $sender->getLocation()->getY(),
-            $sender->getLocation()->getZ(),
+            (int) $sender->getLocation()->getX(),
+            (int) $sender->getLocation()->getY(),
+            (int) $sender->getLocation()->getZ(),
             $sender->getLocation()->getWorld()->getFolderName()
         )) {
             $sender->sendMessage($this->main::tag . $args[0] . " という名前の地点を新しく作成しました!");
