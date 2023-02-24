@@ -5,7 +5,7 @@ namespace yomogibeta\reallySimpleWarp;
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
 use pocketmine\world\Position;
-use yomogibeta\reallySimpleWarp\Database\DataBase;
+use yomogibeta\reallySimpleWarp\DataBase\DataBase;
 
 use yomogibeta\reallySimpleWarp\Command\setWarpPointCommand;
 use yomogibeta\reallySimpleWarp\Command\warpCommand;
