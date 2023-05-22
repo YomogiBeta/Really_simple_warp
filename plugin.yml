@@ -1,6 +1,6 @@
 ﻿name: Really simple warp
-main: yomogibeta\reallySimpleWarp\main
-version: 602
+main: yomogibeta\reallySimpleWarp\Main
+version: 603
 api: [4.0.0]
 load: POSTWORLD
 author: Yomogiβ

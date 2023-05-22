@@ -2,6 +2,8 @@
 
 namespace yomogibeta\reallySimpleWarp;
 
+use yomogibeta\reallySimpleWarp\WarpResult;
+
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
 use pocketmine\world\Position;
@@ -14,7 +16,7 @@ use yomogibeta\reallySimpleWarp\Command\delWarpPointCommand;
 
 
 
-class main extends PluginBase
+class Main extends PluginBase
 {
     public const tag = "§a[§5YS§a]";
     private $db;
@@ -41,10 +43,10 @@ class main extends PluginBase
         return $this->db->delWarpPoint($name);
     }
 
-    public function warp(Player $player, String $name): array
+    public function warp(Player $player, String $name): WarpResult
     {
         $result = $this->db->getPointData($name);
-        if ($result["Name"] === "") return [false, ""];
+        if ($result["Name"] === "") return new WarpResult(false, $name);
 
         if (!$this->getServer()->getWorldManager()->isWorldLoaded($result["World"])) {
             if (!$this->getServer()->getWorldManager()->loadWorld($result["World"])) {
@@ -61,7 +63,7 @@ class main extends PluginBase
             (int)$result["Z"],
             $world
         ));
-        return [true, $result["Name"]];
+        return new WarpResult(true, $result["Name"]);
     }
 
     public function getPointLists(): array
