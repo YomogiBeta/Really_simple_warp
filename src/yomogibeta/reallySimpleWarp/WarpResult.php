@@ -5,7 +5,7 @@ namespace yomogibeta\reallySimpleWarp;
 class WarpResult{
 
     private bool $succsess;
-    private	string $placeName;
+    private string $placeName;
 
     public function __construct(bool $succsess, string $placeName){
         $this->succsess = $succsess;
