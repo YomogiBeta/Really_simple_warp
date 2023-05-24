@@ -50,7 +50,7 @@ class Main extends PluginBase
 
         if (!$this->getServer()->getWorldManager()->isWorldLoaded($result["World"])) {
             if (!$this->getServer()->getWorldManager()->loadWorld($result["World"])) {
-                return [false, ""];
+                return new WarpResult(false, $name);
             } else {
                 $this->getLogger()->info("§aReally simple warpが " . $result["World"] . " というワールドをロードしました");
             }
